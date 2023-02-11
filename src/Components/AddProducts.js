@@ -165,7 +165,7 @@ export const AddProducts = () => {
 
     return (
         <div className='container2'>
-            <Navbar />
+            {/* <Navbar /> */}
             <br></br>
             <br></br>
             <h1>Add Place</h1>
@@ -251,7 +251,8 @@ export const AddProducts = () => {
 
             {/* All Products */}
             <br></br>
-            <div className='container-fluid filter-products-main-box'>
+            <div className='container-fluid filter-products-main-box'>  
+
                 <div className='filter-box'>
                     <h6>Filter by category</h6>
                         {spans.map((individualSpan,index)=>(

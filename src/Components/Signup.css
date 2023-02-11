@@ -1,0 +1,95 @@
+.signupcontainer1{
+    /* background-color:green; */
+    width: 100%;
+    height: 100%;
+    /* background-color: #F5F5F5; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    /* margin-top:10%; */
+}
+
+.signupheading{
+
+    font-size: 30px;
+    font-weight: bold;
+    color: red;
+    margin-bottom: 10px;
+    text-align: center;
+    text-shadow: blue;
+}
+
+.signupmainform{
+    height: 100%;
+    width: 100%;
+}
+
+.fullnameLabel{
+
+    color: #B4886B;
+    font-weight: bold;
+    display: block;
+}
+
+.fullnameInput{
+
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #3CBC8D;
+    color: white;
+    border-radius: 20px;
+}
+
+
+.emailLabel{
+
+    color: #B4886B;
+    font-weight: bold;
+    display: block;
+}
+
+.emailInput{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #3CBC8D;
+    color: white;
+    border-radius: 20px;
+}
+
+.passwordLabel{
+    color: #B4886B;
+    font-weight: bold;
+    display: block;
+}
+
+.passwordInput{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #3CBC8D;
+    color: white;
+    border-radius: 20px;
+}
+
+.signupButton{
+    background-color: brown;
+    border: none;
+    color: white;
+    padding: 10px 100px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    allign-items: center;
+    border-radius: 20px;
+}

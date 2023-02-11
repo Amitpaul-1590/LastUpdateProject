@@ -14,7 +14,7 @@ export const IndividualFilteredProduct = ({individualFilteredProduct}) => {
 
     return (
         <div className='product' style={{backgroundColor:'yellow'}}>
-            <div className='product-img'>
+            <div className='product-img' >
                 <h1 className='photoCard'><a style={{}} href={individualFilteredProduct.map_link}><img src={individualFilteredProduct.url} alt="product-img"/>  </a></h1>
                 {/* <img src={individualProduct.url} alt="product-img"/> */}
             </div>

@@ -4,6 +4,7 @@ import {auth} from '../Config/Config'
 //import {useHistory} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import AddProducts from './AddProducts'
+import './login.css';
 
 
 
@@ -21,8 +22,8 @@ export const Login = () => {
   
 
     const handleLogin=(e)=>{
-        console.log('roni')
-        if (email==="admin@gmail.com" && password === "admin@gmail.com") {  //jodi admin hoy            
+        if (email==="admin@gmail.com" && password === "admin@gmail.com") {  //jodi admin hoy      
+            e.preventDefault();      
          setSuccessMsg('Admin Login Successfull. You will now automatically get redirected to Home page');
             setEmail('');   //sob gula text field ke 0 kore ibo
             setPassword('');
@@ -31,7 +32,7 @@ export const Login = () => {
                 setSuccessMsg('');
                 console.log('ok fine');
                 //history.push('/');
-                navigate('/');
+                navigate('/add-products');
             },3000)
         
         } 
@@ -39,7 +40,7 @@ export const Login = () => {
         else {  // jodi admin na hoy
            e.preventDefault();
             auth.signInWithEmailAndPassword(email,password).then(()=>{
-            setSuccessMsg('Login Successfull. You will now automatically get redirected to Home page');
+            setSuccessMsg('Login Successfull');
             setEmail('');   //sob gula text field ke 0 kore ibo
             setPassword('');
             setErrorMsg('');
@@ -55,53 +56,57 @@ export const Login = () => {
     }
 
     return (
-        <div className='container1' >
+        <div className="logincontainer1">
+        <br></br>
+        <div style={{ padding: "10px"}}>
+        <h1 className='heading1'>Login</h1>
+        
+        
+        {successMsg&&<>  
+            <div >{successMsg}</div>
             <br></br>
-            <br></br>
-            <div style={{backgroundColor: "red", padding: "10px"}}>
-            <h1 id="login">Login</h1>
-            {successMsg&&<>  
-                <div className='success-msg'>{successMsg}</div>
-                <br></br>
-            </>}
-            
-             <form id="form1" style={{backgroundColor: "yellow"}} className='form-group' autoComplete="off"
-            onSubmit={handleLogin}>  
-                <div className='email'>
-                    <label id="em">Email</label>
-                    <input id="em1" type="email" className='form-control' placeholder='e.g.abc@example.com' required
-                    onChange={(e)=>setEmail(e.target.value)} value={email}>      
-                    </input>
-                </div>             
-                {/* ---------------------- */}
-                <br></br>
-               <div className='password'>
-               <label id="pass">Password</label>
-                <input id="pass1"type="password" className='form-control' placeholder='password' required
-                onChange={(e)=>setPassword(e.target.value)} value={password}>
-                    
+        </>}
+        
+         <form className='mainform' autoComplete="off"
+        onSubmit={handleLogin}>  
+            <div >
+                <label className='emailLabel'>Email</label>
+                <input className='emailInput'  type="email"  placeholder='e.g.abc@example.com' required
+                onChange={(e)=>setEmail(e.target.value)} value={email}>      
                 </input>
-                </div> 
-               
+            </div>             
+            {/* ---------------------- */}
+            <br></br>
+           <div >
+           <label className='passLabel' >Password</label>
+            <input className='passInput' type="password"  placeholder='password' required
+            onChange={(e)=>setPassword(e.target.value)} value={password}>
                 
-                <br></br>
-                <div id="loginbtn1"  className='btn-box'>
-                    <button id= "loginbtn" type="submit" className='btn btn-success btn-md'>Log In</button>
-                    <br></br>    
-                </div>
-                <div className='signupLink'>
-                    <span>Don't have an account?<Link to="/signup" className='signlink'>Signup</Link></span>
-                </div>
-                                 
-            </form>
-            </div>
+            </input>
+            </div> 
            
-            {errorMsg&&
-            <>   
-                <br></br>
-                <div className='error-msg'>{errorMsg}</div>                
-            </>}
+           
+            
+            <br></br>
+            <div >
+                <button className='loginbutton' type="submit">Log In</button>
+                <br></br>    
+            </div>
+            <br></br>
+            <br></br>
+            <div>
+                <p >Don't have an account?<Link className='downsignup' to="/signup" >Signup</Link></p>
+            </div>
+                             
+        </form>
         </div>
+       
+        {errorMsg&&
+        <>   
+            <br></br>
+            <div className='error-msg'>{errorMsg}</div>                
+        </>}
+    </div>
     )
 }
 
