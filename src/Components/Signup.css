@@ -31,11 +31,13 @@
     color: #B4886B;
     font-weight: bold;
     display: block;
+    margin-left: 40px;
+    font-size: 15px;
 }
 
 .fullnameInput{
 
-    width: 100%;
+   
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -43,6 +45,9 @@
     background-color: #3CBC8D;
     color: white;
     border-radius: 20px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 
@@ -51,10 +56,13 @@
     color: #B4886B;
     font-weight: bold;
     display: block;
+   
+    margin-left: 40px;
+    font-size: 15px;
 }
 
 .emailInput{
-    width: 100%;
+  
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -62,16 +70,24 @@
     background-color: #3CBC8D;
     color: white;
     border-radius: 20px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .passwordLabel{
     color: #B4886B;
-    font-weight: bold;
+
     display: block;
+    /* text-align: center; */
+    margin-left: 40px;
+    font-size: 15px;
+    font-weight: bold;
+
 }
 
 .passwordInput{
-    width: 100%;
+    width: 80%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -79,17 +95,25 @@
     background-color: #3CBC8D;
     color: white;
     border-radius: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+
+   
 }
+
 
 .signupButton{
     background-color: brown;
+  
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
     border: none;
+   
     color: white;
-    padding: 10px 100px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    allign-items: center;
     border-radius: 20px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    
 }

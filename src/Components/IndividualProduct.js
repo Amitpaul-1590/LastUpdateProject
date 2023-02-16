@@ -66,9 +66,9 @@ export const IndividualProduct = ({individualProduct}) => {
     
 
     return (
-        <div className='product' style={{backgroundColor:'yellow'}}>
+        <div className='product' style={{backgroundColor:'skyblue',  width:"250px",height:"400px"}} >
             <div className='product-img' style={{}}>
-                <h1 className='photoCard'><a style={{}} href={individualProduct.map_link}><img src={individualProduct.url} alt="product-img"/>  </a></h1>
+                <h1 className='photoCard'><a style={{}} href={individualProduct.map_link}><img  style={{borderRadius:"10px",boxShadow:"5px",margin:"0px"}}  src={individualProduct.url} alt="product-img"/>  </a></h1>
             </div>
             <h1 className='cardTitle'><a style={{textDecoration: 'none'}} href={individualProduct.web_link}>{individualProduct.title}  </a></h1>
             <a href={individualProduct.information1}>Sheet</a>
@@ -79,12 +79,11 @@ export const IndividualProduct = ({individualProduct}) => {
             </div>
             <div className='btn btn-danger btn-md cart-btn' onClick={view_cost}>View cost </div>   
             <div>
-              <Button
+              <Button 
                 onClick={() => {
                   deletePlace(individualProduct.ID);
                 }}
-              >
-                {" "}
+              >{" "}
                 Delt
               </Button>
 

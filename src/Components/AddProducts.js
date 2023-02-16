@@ -5,6 +5,7 @@ import { Navbar } from './Navbar'
 import { Products } from './Products'
 import { IndividualFilteredProduct } from './IndividualFilteredProduct'
 import {db} from '../Config/Config';
+import './addproduct.css';
 // import { collection } from "@firebase/firestore";
 //  import { useCollectionData } from "react-firebase-hooks/firestore";
 //  import {useCollectionData} from 'react-firebase-hooks/firestore';
@@ -164,68 +165,69 @@ export const AddProducts = () => {
     }
 
     return (
-        <div className='container2'>
+        <div className='addplaceContainer'>
             {/* <Navbar /> */}
             <br></br>
             <br></br>
-            <h1>Add Place</h1>
+            <h1 className='Addplace'>Add Place</h1>
             <hr></hr>        
             {successMsg&&<>
                 <div className='success-msg'>{successMsg}</div>
                 <br></br>
             </>} 
-            <form autoComplete="off" className='form-group' onSubmit={handleAddProducts}>
-                <label>Visiting place</label>
-                <input type="text" className='form-control' required
+            <form className="addplaceform" autoComplete="off"  onSubmit={handleAddProducts}>
+                <label className='visitingPlaceLabel'>Visiting place</label>
+                <input className='visitingPlaceInput' type="text" required
                 onChange={(e)=>setTitle(e.target.value)} value={title}></input>
                 <br></br>
-                <label>Place Description</label>
-                <input type="text" className='form-control' required
+                <label className='label2'>Place Description</label>
+                <input className='input2' type="text"  required
                 onChange={(e)=>setDescription(e.target.value)} value={description}></input>
                 <br></br>
                 
-                <label>Spot Category</label>
-                <select className='form-control' required
+                <label className='label3'>Spot Category</label>
+                <select className='selectplace' required
                 value={category} onChange={(e)=>setCategory(e.target.value)}>                                    
-                    <option value="">Select spot Category</option>                   
-                    <option>Lake</option>
-                    <option>Zoo</option>                    
-                    <option>Sea beach</option>
-                    <option>Old place</option>
-                    <option>Forest</option>
-                    <option>Park</option>   
+                    <option className='option' value="">Select spot Category</option>                   
+                    <option className='option'>Lake and river</option>
+                    <option className='option'>Zoo</option>                    
+                    <option className='option'>Sea beach</option>
+                    <option className='option'>Old place</option>
+                    <option className='option'>Forest</option>
+                    <option className='option'>Park</option>   
                
                 </select>
                 <br></br>
-                <label>Upload Place Image</label>
-                <input type="file" id="file" className='form-control' required
+                <label className='label4'>Upload Place Image</label>
+                <input className='imginput' type="file" id="file"  required
                 onChange={handleProductImg}></input>
 
                 
                 <br></br>
 
-                <label>Website Link</label>
-                <input type="text" className='form-control' required
+                <label className='label5'>Website Link</label>
+                <input className='weblink' type="text"  required
                 onChange={(e)=>setWeb_link(e.target.value)} value={web_link}></input>
                 <br></br>
 
-                <label>Sheet link json formate</label>
-                <input type="text" className='form-control' required
+                <label className='label6'>Sheet link json formate</label>
+               
+                <input className='input6' type="text"  required
                 onChange={(e)=>setSheet_link(e.target.value)} value={sheet_link}></input>
                 <br></br>
 
-                <label>Map Link Link</label>
-                <input type="text" className='form-control' required
+                <label className='label7'>Map Link Link</label>
+                <input className='maplink' type="text"  required
                 onChange={(e)=>setMap_link(e.target.value)} value={map_link}></input>
                 <br></br>
 
-                <label>Sheet Link</label>
-                <input type="text" className='form-control' required
+                <label className='label8'>Sheet Link</label>
+                <input className='input8' type="text" required
                 onChange={(e)=>setInformation1(e.target.value)} value={information1}></input>
                 <br></br>
 
-                <label>information2</label>
-                <input type="text" className='form-control' required
+                <label className='label9'>information2</label>
+                <input className='input9' type="text"  required
                 onChange={(e)=>setInformation2(e.target.value)} value={information2}></input>
                 <br></br>
                 
@@ -236,7 +238,7 @@ export const AddProducts = () => {
                 </>}
                 <br></br>           
                 <div style={{display:'flex', justifyContent:'flex-end'}}>
-                    <button type="submit" className='btn btn-success btn-md'>
+                    <button className='informationSubmit' type="submit" >
                         SUBMIT
                     </button>
                 </div>
@@ -252,13 +254,12 @@ export const AddProducts = () => {
             {/* All Products */}
             <br></br>
             <div className='container-fluid filter-products-main-box'>  
-
                 <div className='filter-box'>
-                    <h6>Filter by category</h6>
+                    {/* <h6>Place category</h6><br/> */}
                         {spans.map((individualSpan,index)=>(
-                            <span  key={index} id={individualSpan.id}
+                            <span className='filterPlace' key={index} id={individualSpan.id}
                             onClick={()=>handleChange(individualSpan)}
-                            className={individualSpan.id===active ? active:'deactive'}>{individualSpan.text}
+                            >{individualSpan.text}
                             </span>
                         ))}
                     
@@ -266,7 +267,8 @@ export const AddProducts = () => {
                 {filteredProducts.length > 0&&(
                   <div className='my-products'>
                       <h1 className='text-center'>{category}</h1>
-                      <a href="javascript:void(0)" onClick={returntoAllProducts}>Return to All Place</a>
+                      
+                      <a  onClick={returntoAllProducts}>Return to All Place</a>
                       <div className='products-box'>
                           {filteredProducts.map(individualFilteredProduct=>(
                               <IndividualFilteredProduct key={individualFilteredProduct.ID}

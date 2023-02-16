@@ -10,7 +10,10 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 
 import { AddProducts } from './Components/AddProducts'
-import logoImg from './Images/AppLogo.png';
+import logoImg from './Images/prolgo.png';
+// import emailimg from './Images/email.png';
+// import passimg from './Images/pass.png';
+
 
 import './App.css'; 
    
@@ -18,13 +21,13 @@ const App = () => {
     const [showMediaIcons, setShowMediaIcons] = useState(false);
     return ( 
        <Router>  
-        <div className="App">   
-          <nav className="main-nav">  
+        <div  className="App">   
+          <nav  id='mainNav' className="main-nav ">  
             {/* 1st logo part  */}
               <div className="logoIMG">
-                  <img style={{height: '130px'}} src={logoImg} alt="logo" />
+                  <img style={{height: '100px',marginBottom:"60px"}} src={logoImg} alt="logo" />
               </div>      
-            <div id="navbarONE" 
+            <div   id="navbarONE" 
               style={{
                 
                 
@@ -32,12 +35,14 @@ const App = () => {
                
 
               }}
-              className={
+              className={ 
                 showMediaIcons ? "menu-link mobile-menu-link" : "menu-link"
               }>
-              <ul className='mainbar' style={{borderRadius: "60px"}}>
+              <ul  className='mainbar' style={{borderRadius: "60px"}}>
+             
                 <li className='list'>
-                    <p ><Link  className='link' to="/"><span className='barmanu'>Home</span></Link></p>
+                {/* <img className='emailimg' src={emailimg} alt="emailimg"></img> */}
+                    <p ><Link  className='link' to="/home"><span className='barmanu'>Home</span></Link></p>
                 </li>
                 <li>
                     <p><Link className='link'  to="/Login"><span  className='barmanu'>Login</span></Link></p>  
@@ -46,7 +51,7 @@ const App = () => {
                     <p><Link className='link' to="/Signup"><span  className='barmanu'>Sign Up</span></Link></p>
                   </li> 
                   <li>  
-                    <p><Link className='link' to="/about"><span  className='barmanu'>About</span></Link></p>  
+                    <p><Link className='link' to="/"><span  className='barmanu'>About</span></Link></p>  
                   </li>  
                   <li>  
                     <p><Link className='link' to="/add-products"> <span  className='barmanu'>Admin</span> </Link></p>  
@@ -55,7 +60,7 @@ const App = () => {
             </div>
  
             {/* 3rd social media links */}
-            <div className="social-media">       
+            <div  className="social-media ">       
 
               {/* hamburget menu start  */}
               <div className="hamburger-menu">
@@ -66,10 +71,10 @@ const App = () => {
         </div>
       </nav>
            <Routes>  
-                 <Route exact path='/' element={< Home />}></Route>
+                 <Route exact path='/home' element={< Home />}></Route>
                  <Route exact path='/Login' element={< Login />}></Route>   
                  <Route exact path='/Signup' element={< Signup />}></Route>
-                 <Route exact path='/about' element={< About />}></Route> 
+                 <Route exact path='/' element={< About />}></Route> 
                  <Route exact path='/Information' element={< Information /> }></Route>
                  <Route Component={NotFound}></Route>              
                  <Route exact path="/add-products" element={<AddProducts />}/>

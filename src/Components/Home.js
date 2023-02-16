@@ -73,10 +73,7 @@ export const Home = (props) => {
         {id: 'sea_beach', text: 'Sea beach'},
         {id: 'old_places', text: 'Old place'},
         {id: 'forest', text: 'Forest'},
-        {id: 'Park', text: 'Park'},
-        {id: 'otherplace1', text: ``},
-        {id: 'otherplace2', text: ``},
-        {id: 'otherplace3', text: ''},             
+        {id: 'Park', text: 'Park'},         
     ])
 
     // active class state
@@ -117,13 +114,17 @@ export const Home = (props) => {
         <div className='home'>
             <Navbar user={user} />
             <br></br>
-            <div className='container-fluid filter-products-main-box'>
-                <div className='filter-box'>
-                    <h6>Filter by category</h6>
+            <h6 className='p_catagory'>Place Category</h6>
+            <div className='container-fluid filter'>
+                <div className='filterplacebox ' style={{}}>
+                  
+                    
                         {spans.map((individualSpan,index)=>(
-                            <span  key={index} id={individualSpan.id}
+                            <span className='catagory_Place'  key={index} id={individualSpan.id}
                             onClick={()=>handleChange(individualSpan)}
-                            className={individualSpan.id===active ? active:'deactive'}>{individualSpan.text}
+                            
+                            style={{margin:"1%", backgroundColor:"purple", padding:"1%", borderRadius:"5px", height:"50px", width:"50px", color:"white"}}
+                            >{individualSpan.text}
                             </span>
                         ))}                    
                 </div>

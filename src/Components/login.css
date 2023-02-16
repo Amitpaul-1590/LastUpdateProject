@@ -31,6 +31,10 @@
     color: #B4886B;
     font-weight: bold;
     display: block;
+    /* text-align: center; */
+    margin-left: 40px;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 .emailInput{
@@ -42,12 +46,21 @@
     background-color: #3CBC8D;
     color: white;
     border-radius: 20px;
+    /* padding-left: 80px; */
+    font-size: 20px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    
 }
 
 .passLabel{
     color: #B4886B;
     font-weight: bold;
     display: block;
+    margin-left: 40px;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 
@@ -61,19 +74,27 @@
     color: white;
     border-radius: 20px;
     box-shadow: 0 0 20px 0px rgba(85, 0, 0, 0.2);
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    
 }
 
 .loginbutton{
    background-color: brown;
-  border: none;
-  color: white;
-  padding: 10px 100px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  allign-items: center;
-  border-radius: 20px;
+   width: 100%;
+   padding: 12px 20px;
+   margin: 8px 0;
+   box-sizing: border-box;
+   border: none;
+   
+   color: white;
+   border-radius: 20px;
+   box-shadow: 0 0 20px 0px rgba(85, 0, 0, 0.2);
+   width: 80%;
+   margin-left: 10%;
+   margin-right: 10%;
+   
 }
 
 .downsignup  {
@@ -81,3 +102,11 @@
     color:red;
     text-decoration: none;
 }
+
+/* .emailimg{
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    margin-top: 20px;
+    
+} */

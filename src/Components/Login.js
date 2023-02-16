@@ -3,8 +3,10 @@ import {Link, Navigate} from 'react-router-dom'
 import {auth} from '../Config/Config'
 //import {useHistory} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
-import AddProducts from './AddProducts'
+// import AddProducts from './AddProducts'
 import './login.css';
+// import emailimg from '../Images/email.png';
+// import passimg from '../Images/pass.png';
 
 
 
@@ -24,14 +26,12 @@ export const Login = () => {
     const handleLogin=(e)=>{
         if (email==="admin@gmail.com" && password === "admin@gmail.com") {  //jodi admin hoy      
             e.preventDefault();      
-         setSuccessMsg('Admin Login Successfull. You will now automatically get redirected to Home page');
+         setSuccessMsg('Admin Login Successfull. You will now automatically get redirected to Admin page');
             setEmail('');   //sob gula text field ke 0 kore ibo
             setPassword('');
             setErrorMsg('');
             setTimeout(()=>{
                 setSuccessMsg('');
-                console.log('ok fine');
-                //history.push('/');
                 navigate('/add-products');
             },3000)
         
@@ -46,8 +46,7 @@ export const Login = () => {
             setErrorMsg('');
             setTimeout(()=>{
                 setSuccessMsg('');
-                //history.push('/');
-                navigate('/');
+                navigate('/home');
             },3000)   //3 sec por success message dibo abong redirect hobe
         })
         
@@ -67,18 +66,19 @@ export const Login = () => {
             <br></br>
         </>}
         
-         <form className='mainform' autoComplete="off"
-        onSubmit={handleLogin}>  
+         <form className='mainform' onSubmit={handleLogin}>  
             <div >
                 <label className='emailLabel'>Email</label>
+               {/* <img className='emailimg' src={emailimg} alt="emailimg"></img> */}
                 <input className='emailInput'  type="email"  placeholder='e.g.abc@example.com' required
                 onChange={(e)=>setEmail(e.target.value)} value={email}>      
                 </input>
             </div>             
             {/* ---------------------- */}
-            <br></br>
+            <br/>
            <div >
            <label className='passLabel' >Password</label>
+           {/* <img className='passimg' src={passimg} alt="emailimg"></img> */}
             <input className='passInput' type="password"  placeholder='password' required
             onChange={(e)=>setPassword(e.target.value)} value={password}>
                 
@@ -87,7 +87,7 @@ export const Login = () => {
            
            
             
-            <br></br>
+            <br/>
             <div >
                 <button className='loginbutton' type="submit">Log In</button>
                 <br></br>    
@@ -106,6 +106,7 @@ export const Login = () => {
             <br></br>
             <div className='error-msg'>{errorMsg}</div>                
         </>}
+
     </div>
     )
 }

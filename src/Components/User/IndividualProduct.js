@@ -50,24 +50,17 @@ console.log(url);
   };
 
     return (
-        <div className='product' style={{backgroundColor:'yellow'}}>
-            <div className='product-img' style={{}}>
-                <h1 className='photoCard'><a style={{}} href={individualProduct.map_link}><img src={individualProduct.url} alt="product-img"/>  </a></h1>
-                {/* <img src={individualProduct.url} alt="product-img"/> */}
-            </div>
-            <h1 className='cardTitle'><a style={{textDecoration: 'none'}} href={individualProduct.web_link}>{individualProduct.title}  </a></h1>
-            <a href={individualProduct.sheet_link} >user sheet individual product </a>
-            <div className='product-text description'>{individualProduct.description}</div>
-            <button
-              onClick={() => {
-                deleteUser(individualProduct.ID);
-              }}
-            >
-              {" "}
-              Delete Places
-            </button>
-            <div className='btn btn-danger btn-md cart-btn' onClick={view_cost}>View cost </div>           
-      
-        </div> 
+      <div className='product' style={{backgroundColor:'skyblue',  width:"250px",height:"350px"}}>
+      <div  className='product-img'>
+          <h1 className='photoCard'><a style={{}} href={individualProduct.map_link}><img style={{borderRadius:"10px",boxShadow:"5px",margin:"0px"}} src={individualProduct.url} alt="product-img"/>  </a></h1>
+          {/* <img src={individualProduct.url} alt="product-img"/> */}
+      </div>
+      <h1  className='cardTitle'><a style={{textDecoration: 'none' ,color:"white",fontSize:"15px", fontWeight:"bold"}} href={individualProduct.web_link}>{individualProduct.title}  </a></h1>
+      {/* <a  href={individualFilteredProduct.sheet_link}>user sheet filtered product</a> */}
+      <div style={{color:"blue"}} className='product-text description'>{individualProduct.description}</div>
+      {/* <div className='product-text description'>{individualProduct.link}</div> */}
+      {/* <div className='product-text price'>$ {individualProduct.price}</div> */}
+      <div  className='btn btn-danger btn-sm cart-btn' onClick={view_cost}>View cost </div>
+  </div> 
     )
 }

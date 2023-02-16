@@ -358,53 +358,6 @@ code {
   }
 }
 
-.filter-box{
-  display: flex;
-  flex-direction: column;
-  /* border: 1px solid red; */
-  flex: 0.7;
-  padding-left: 15px;
-  padding-top: 10px;
-}
-
-@media(max-width: 540px){
-  .filter-box{
-    width: 100%;
-    padding-left: 10px;
-    padding-top: 5px;
-  }
-}
-
-.filter-box h6{
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-.filter-box span{
-  cursor: pointer;
-  margin: 15px 0px;
-  font-size: 14px;
-}
-
-.filter-box span.ElectronicDevices{
-  color: #e00a02;
-}
-
-.filter-box span.MobileAccessories{
-  color: #e00a02;
-}
-
-.filter-box span.TVAndHomeAppliances{
-  color: #e00a02;
-}
-
-.filter-box span.SportsAndOutdoors{
-  color: #e00a02;
-}
-
-.HealthAndBeauty,.HomeAndLifestyle,.MensFashion,.WatchesBagsAndJewellery,.Groceries{
-  color: #e00a02;
-}
 
 
 
@@ -631,6 +584,16 @@ code {
 #filterbox{
 
   color: #294469;
+}
+
+.main-nav{
+  fixed: top;
+}
+.emailimg{
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  margin-top: 20px;
 }
 
 

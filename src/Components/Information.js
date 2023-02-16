@@ -16,8 +16,8 @@ const Information = () => {
   const getData = async () => {
     try {
       const res = await fetch(
-        //location.state.sheet_link
-        //  "https://sheet.best/api/sheets/12327e80-9493-4b36-8e59-ae4e4bc44c12"
+        // location.state.sheet_link
+        //  "https://sheet.best/api/sheets/4a4681c3-0c66-42c7-9049-1b8eb33c5ee2"
       );  
       const data = await res.json();
       console.log(data);

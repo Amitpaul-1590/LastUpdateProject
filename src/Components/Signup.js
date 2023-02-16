@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import './Signup.css';
 
+
 const Signup = () => {
 
     const navigate = useNavigate();
@@ -16,7 +17,6 @@ const Signup = () => {
 
     const handleSignup=(e)=>{
         e.preventDefault();
-         console.log(fullName, email, password);
         auth.createUserWithEmailAndPassword(email,password).then((credentials)=>{  //video 3 er 8 min
             console.log(credentials);
             fs.collection('users').doc(credentials.user.uid).set({    //video 3 er 10 min

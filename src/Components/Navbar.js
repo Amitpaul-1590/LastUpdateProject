@@ -18,7 +18,7 @@ export const Navbar = ({user,totalProducts}) => {
     }
 
     return (
-        <div className='navbar'>
+        <div className='navbar' id='logout_section'>
             <div className='leftside'>
                 <div className='logo'>
                     <img src={logo} alt="logo"/>
