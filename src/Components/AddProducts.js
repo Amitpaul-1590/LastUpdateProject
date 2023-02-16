@@ -57,7 +57,7 @@ export const AddProducts = () => {
             console.log(progress);
         },error=>setUploadError(error.message),()=>{
             storage.ref('product-images').child(image.name).getDownloadURL().then(url=>{
-                fs.collection('Products').add({  // eikhane collection er icha moto id set korte hobe
+                fs.collection('Places').add({  // eikhane collection er icha moto id set korte hobe
                     title,
                     description,
                     category,
@@ -97,7 +97,7 @@ export const AddProducts = () => {
 
     // getting products function
     const getProducts = async ()=>{
-        const products = await fs.collection('Products').get();
+        const products = await fs.collection('Places').get();
         const productsArray = [];
         for (var snap of products.docs){
             var data = snap.data();

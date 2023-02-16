@@ -46,7 +46,7 @@ export const Home = (props) => {
 
     // getting products function
     const getProducts = async ()=>{
-        const products = await fs.collection('Products').get();
+        const products = await fs.collection('Places').get();
         const productsArray = [];
         for (var snap of products.docs){
             var data = snap.data();

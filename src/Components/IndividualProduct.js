@@ -48,18 +48,18 @@ export const IndividualProduct = ({individualProduct}) => {
             console.log(individualProduct.ID);
             
               const deleteUser = async (id) => {
-              const userDoc = doc(db, "Products", id);
+              const userDoc = doc(db, "Places", id);
               await deleteDoc(userDoc);
               };         
         
     }
     const deletePlace = async (id) => {
-      const userDoc = doc(db, "Products", id);
+      const userDoc = doc(db, "Places", id);
       await deleteDoc(userDoc);
     };
 
     const updatePlaces = async (id) => {
-      // const userDoc = doc(db, "Products", id);
+      // const userDoc = doc(db, "Places", id);
       // await deleteDoc(userDoc);
     };
 
