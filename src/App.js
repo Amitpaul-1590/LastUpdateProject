@@ -9,7 +9,7 @@ import Information from './Components/Information'
 import { GiHamburgerMenu } from "react-icons/gi";
 
 
-import { AddProducts } from './Components/AddProducts'
+import { AddPlaces } from './Components/AddPlaces'
 import logoImg from './Images/prolgo.png';
 // import emailimg from './Images/email.png';
 // import passimg from './Images/pass.png';
@@ -77,7 +77,7 @@ const App = () => {
                  <Route exact path='/' element={< About />}></Route> 
                  <Route exact path='/Information' element={< Information /> }></Route>
                  <Route Component={NotFound}></Route>              
-                 <Route exact path="/add-products" element={<AddProducts />}/>
+                 <Route exact path="/add-products" element={<AddPlaces />}/>
                 {/* <Route exact path="/cart" component={Cart}/>        */}        
           </Routes>  
           </div>            

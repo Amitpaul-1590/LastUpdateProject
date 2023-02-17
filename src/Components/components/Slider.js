@@ -30,7 +30,7 @@ function Slider(props) {
 
   return (
     <div className="slider-container">
-<button onClick={()=>navigate("/home")}>Go to explore</button>  
+<button style={{marginLeft:"35%", border:"none",borderRadius:"5px",color:"white",backgroundColor:"tomato",padding:"8px",fontWeight:"bold"}} onClick={()=>navigate("/home")}>Go to explore</button>  
       <SliderContent activeIndex={activeIndex} sliderImage={sliderImage} />
       <Arrows
         prevSlide={() =>

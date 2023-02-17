@@ -1,15 +1,16 @@
+//copy....................................................................
 import {storage,fs} from '../Config/Config'
 
 import React,{useState, useEffect} from 'react'
 import { Navbar } from './Navbar'
-import { Products } from './Products'
-import { IndividualFilteredProduct } from './IndividualFilteredProduct'
+import { Products } from './Places'
+import { IndividualFilteredProduct } from './IndividualFilteredPlaces'
 import {db} from '../Config/Config';
 import './addproduct.css';
 // import { collection } from "@firebase/firestore";
 //  import { useCollectionData } from "react-firebase-hooks/firestore";
 //  import {useCollectionData} from 'react-firebase-hooks/firestore';
-export const AddProducts = () => {
+export const AddPlaces = () => {
 
     // const query = collection(db, "oses");
     //  const [docs, loading, error] = useCollectionData(query);
@@ -189,7 +190,7 @@ export const AddProducts = () => {
                 <select className='selectplace' required
                 value={category} onChange={(e)=>setCategory(e.target.value)}>                                    
                     <option className='option' value="">Select spot Category</option>                   
-                    <option className='option'>Lake and river</option>
+                    <option className='option'>Lake</option>
                     <option className='option'>Zoo</option>                    
                     <option className='option'>Sea beach</option>
                     <option className='option'>Old place</option>
@@ -298,3 +299,5 @@ export const AddProducts = () => {
         </div>
     )
 }
+
+export default AddPlaces;

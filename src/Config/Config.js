@@ -7,14 +7,13 @@ import { getFirestore } from "@firebase/firestore";
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDxtWgUHJjyzJXYqwgCIT4oIw0iVgJnCbg",
-    authDomain: "project-716fb.firebaseapp.com",
-    databaseURL: "https://project-716fb-default-rtdb.firebaseio.com",
-    projectId: "project-716fb",
-    storageBucket: "project-716fb.appspot.com",
-    messagingSenderId: "494813615058",
-    appId: "1:494813615058:web:27644cb23301b92ea8ee0b"
-};
+    apiKey: "AIzaSyDl1n28pmV3kW0XB5UaEHldnAtjlytwODk",
+    authDomain: "project-e24cd.firebaseapp.com",
+    projectId: "project-e24cd",
+    storageBucket: "project-e24cd.appspot.com",
+    messagingSenderId: "1046275312543",
+    appId: "1:1046275312543:web:8190e253f9edb3d60e0baa"
+  };
 
 const app =  firebase.initializeApp(firebaseConfig);
 

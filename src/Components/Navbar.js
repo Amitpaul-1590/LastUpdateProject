@@ -27,8 +27,8 @@ export const Navbar = ({user,totalProducts}) => {
             <div className='rightside'>
 
                 {!user&&<>
-                    <div><Link className='navlink' to="signup"><span id="signupBTN">SIGN UP</span></Link></div>
-                    <div><Link className='navlink' to="login"><span id="loginBTN">LOGIN</span></Link></div>
+                    <div><Link className='navlink' to="/Signup"><span id="signupBTN">SIGN UP</span></Link></div>
+                    <div><Link className='navlink' to="/Login"><span id="loginBTN">LOGIN</span></Link></div>
                 </>} 
 
                 {user&&<>

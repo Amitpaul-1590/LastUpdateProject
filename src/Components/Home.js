@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from 'react'
 import { Navbar } from './Navbar'
-import { Products } from './User/Products'
-import { IndividualFilteredProduct } from './User/IndividualFilteredProduct'
+import { Products } from './User/Places'
+import { IndividualFilteredProduct } from './User/IndividualFilteredPlaces'
 import {auth,fs} from '../Config/Config'
 export const Home = (props) => {
 
