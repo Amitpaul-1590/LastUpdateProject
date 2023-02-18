@@ -1,3 +1,4 @@
+//user
 import {fs} from '../../Config/Config'
 import {db} from '../../Config/Config';
 import React from 'react'
@@ -19,11 +20,7 @@ export const IndividualProduct = ({individualProduct}) => {
     const map_link   = individualProduct.map_link;
     const navigate = useNavigate(); 
 
-    console.log(sheet_link);
-
-const url = individualProduct.sheet_link; 
-console.log(typeof url) // string
-console.log(url);
+    const url = individualProduct.sheet_link; 
   
     const view_cost=()=>{
           navigate(
@@ -44,6 +41,7 @@ console.log(url);
               };         
         
     }
+      
       const deleteUser = async (id) => {
     const userDoc = doc(db, "Products", id);
     await deleteDoc(userDoc);

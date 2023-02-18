@@ -67,11 +67,6 @@ export const IndividualProduct = ({individualProduct}) => {
       setFormid(data);
       handleShow();
     }
-    
-    console.log(typeof(web_link));
-    console.log(web_link)
-
-    
 
     return (
         <div className='product' style={{backgroundColor:'skyblue',  width:"250px",height:"400px"}} >

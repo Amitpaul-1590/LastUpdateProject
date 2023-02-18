@@ -1,12 +1,12 @@
 import React,{useState} from 'react'
 import {Link, Navigate} from 'react-router-dom'
-import {auth} from '../Config/Config'
+// import {auth} from '../../Config/Config'
 //import {useHistory} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 // import AddProducts from './AddProducts'
 import './login.css';
-// import emailimg from '../Images/email.png';
-// import passimg from '../Images/pass.png';
+import {auth} from '../../Config/Config'
+
 
 
 
@@ -46,7 +46,8 @@ export const Login = () => {
             setErrorMsg('');
             setTimeout(()=>{
                 setSuccessMsg('');
-                navigate('/home');
+                navigate('../home'); 
+                // ../home
             },3000)   //3 sec por success message dibo abong redirect hobe
         })
         

@@ -13,9 +13,12 @@ export const Navbar = ({user,totalProducts}) => {
 
     const handleLogout=()=>{
         auth.signOut().then(()=>{
-          navigate.push('/');
+          navigate.push("/home");
         })
     }
+    const sendSubmit = () => {
+    navigate("/quiz");
+};
 
     return (
         <div className='navbar' id='logout_section'>

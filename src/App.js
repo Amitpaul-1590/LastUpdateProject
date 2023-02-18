@@ -1,12 +1,13 @@
 import React, { useState } from 'react';  //Component
 import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';  
 import Home from './Components/Home';  
-import Login from './Components/Login';  
+import Login from './Components/Login_registration/Login' 
 import About from './Components/About';
-import Signup from './Components/Signup';  
+import Signup from './Components/Login_registration/Signup';  
 import NotFound from './Components/NotFound'; 
 import Information from './Components/Information'
 import { GiHamburgerMenu } from "react-icons/gi";
+
 
 
 import { AddPlaces } from './Components/AddPlaces'

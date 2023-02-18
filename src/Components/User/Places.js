@@ -1,3 +1,4 @@
+//user
 import {IndividualProduct} from './IndividualPlace'
 import React from 'react'
 
