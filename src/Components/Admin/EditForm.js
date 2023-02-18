@@ -2,8 +2,20 @@ import React from 'react'
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { useState, useEffect } from 'react';
+import {db} from '../../Config/Config';
+import {storage,fs} from '../../Config/Config'
+import {
+  collection,
+  getDocs,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  doc,
+} from "firebase/firestore";
 
 const EditForm = ({closeEvent, fid}) => {
+  console.log(fid)
+  console.log(fid.sheet_link)
   const [title, setTitle]=useState('');
   const [description, setDescription]=useState('');
   const [sheet_link, setSheet_link]=useState('');
@@ -31,36 +43,60 @@ const EditForm = ({closeEvent, fid}) => {
             console.log('please select your file');
         }
     } 
-    console.log(typeof(fid.web_link));
-    console.log(fid.web_link);
+
         useEffect(()=>{
             setTitle(fid.title);
             setDescription(fid.description);
             setCategory(fid.category);
-            setWeb_link(web_link);
-            setSheet_link(sheet_link);
-            setMap_link(map_link);
-            setInformation1(information1);
+            setWeb_link(fid.web_link);
+            setSheet_link(fid.sheet_link);
+            setMap_link(fid.map_link);
+            setInformation1(fid.information1);
         },[]);
+        const handleUpdatePlaceInformation = async () => {
+          console.log("update");
+          const userDoc = doc(db, "Places", fid.id);
+          const newFields = {
+            title: title,
+            description: description,
+          };
+          await updateDoc(userDoc, newFields);
+          closeEvent();
+          // let ref = firebase.ref('Places');
+        }
+
+// updateBookList: (id, data) => {
+//   let ref = firebaseDb.ref('NewBooks');
+//   return ref
+//     .child(id)
+//     .update(data)
+//     .then(() => ref.once('value'))
+//     .then(snapshot => snapshot.val())
+//     .catch(error => ({
+//       errorCode: error.code,
+//       errorMessage: error.message
+//     }));
+// }
+
   return (
     <div>
       <Modal.Header closeButton>
         <Modal.Title>Edit Place Informations</Modal.Title>
       </Modal.Header>
         <Modal.Body>
-          <form autoComplete="off" className='form-group' > 
+          <form autoComplete="off" className='form-group' onSubmit={handleUpdatePlaceInformation }> 
           {/* onSubmit={handleAddProducts} */}
                 <label>Visiting place</label>
-                <input type="text" className='form-control' required
+                <input type="text" className='form-control' 
                 onChange={(e)=>setTitle(e.target.value)} value={title}></input>
                 <br></br>
                 <label>Place Description</label>
-                <input type="text" className='form-control' required
+                <input type="text" className='form-control' 
                 onChange={(e)=>setDescription(e.target.value)} value={description}></input>
                 <br></br>
                 
                 <label>Spot Category</label>
-                <select className='form-control' required
+                <select className='form-control' 
                 value={category} onChange={(e)=>setCategory(e.target.value)}>                                    
                     <option value="">Select spot Category</option>                   
                     <option>Lake</option>
@@ -73,34 +109,34 @@ const EditForm = ({closeEvent, fid}) => {
                 </select>
                 <br></br>
                 <label>Upload Place Image</label>
-                <input type="file" id="file" className='form-control' required
+                <input type="file" id="file" className='form-control' 
                 onChange={handleProductImg}></input>
 
                 
                 <br></br>
 
                 <label>Website Link</label>
-                <input type="text" className='form-control' required
+                <input type="text" className='form-control' 
                 onChange={(e)=>setWeb_link(e.target.value)} value={web_link}></input>
                 <br></br>
 
                 <label>Sheet Link</label>
-                <input type="text" className='form-control' required
+                <input type="text" className='form-control' 
                 onChange={(e)=>setSheet_link(e.target.value)} value={sheet_link}></input>
                 <br></br>
 
                 <label>Map Link Link</label>
-                <input type="text" className='form-control' required
+                <input type="text" className='form-control' 
                 onChange={(e)=>setMap_link(e.target.value)} value={map_link}></input>
                 <br></br>
 
                 <label>Sheet link json formate</label>
-                <input type="text" className='form-control' required
+                <input type="text" className='form-control' 
                 onChange={(e)=>setInformation1(e.target.value)} value={information1}></input>
                 <br></br>
 
                 <label>information2</label>
-                <input type="text" className='form-control' required
+                <input type="text" className='form-control' 
                 onChange={(e)=>setInformation2(e.target.value)} value={information2}></input>
                 <br></br>
                 
@@ -111,22 +147,22 @@ const EditForm = ({closeEvent, fid}) => {
                 </>}
                 <br></br>           
                 <div style={{display:'flex', justifyContent:'flex-end'}}>
-                    <button type="submit" className='btn btn-success btn-md'>
-                        SUBMIT
-                    </button>
+                    <Button type="submit" className='btn btn-success btn-md'>
+                        EDIT
+                    </Button>
                 </div>
 
                 
             </form>      
         </Modal.Body>
-      <Modal.Footer>
+      {/* <Modal.Footer>
       <Button variant="secondary" onClick={closeEvent}>
         Close
       </Button>
       <Button variant="primary" onClick={closeEvent}>
         Save Changes
       </Button>
-      </Modal.Footer>
+      </Modal.Footer> */}
     </div>
   )
 }

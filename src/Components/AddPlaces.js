@@ -1,11 +1,11 @@
 //copy....................................................................
-import {storage,fs} from '../Config/Config'
 
 import React,{useState, useEffect} from 'react'
 import { Navbar } from './Navbar'
 import { Products } from './Admin/Places'
 import { IndividualFilteredProduct } from './Admin/IndividualFilteredPlaces'
 import {db} from '../Config/Config';
+import {storage,fs} from '../Config/Config'
 import './addplace.css';
 // import { collection } from "@firebase/firestore";
 //  import { useCollectionData } from "react-firebase-hooks/firestore";
@@ -70,7 +70,7 @@ export const AddPlaces = () => {
                     information1,
                     information2,
                 }).then(()=>{ // ekhane collection er id ta nite hobe
-                    setSuccessMsg('Product added successfully');
+                    setSuccessMsg('Place added successfully');
                     setTitle('');
                     setDescription('');
                     setCategory('');

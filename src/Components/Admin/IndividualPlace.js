@@ -21,11 +21,12 @@ export const IndividualProduct = ({individualProduct}) => {
 //modal
 
   const [show, setShow] = useState(false);
-  const [formid, setFormid] = useState("");
+  const [formid, setFormid] = useState([]);  //""
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
 //modal
+
 
 
     const sheet_link = individualProduct.sheet_link;
@@ -53,7 +54,7 @@ export const IndividualProduct = ({individualProduct}) => {
       // await deleteDoc(userDoc);
     };
 
-    const editData = (id, title, description, category, web_link, sheet_link, map_link, information1) => {
+    const editData = (id, title, description, category, web_link, sheet_link, map_link, information1, img) => {
       const data = {
         id: id,
         title: title,
@@ -62,7 +63,8 @@ export const IndividualProduct = ({individualProduct}) => {
         web_link: web_link,
         sheet_link: sheet_link,
         map_link: map_link,
-        information1: information1
+        information1: information1,
+        img: img
       };
       setFormid(data);
       handleShow();
@@ -101,13 +103,14 @@ export const IndividualProduct = ({individualProduct}) => {
                   individualProduct.web_link,
                   individualProduct.sheet_link,
                   individualProduct.map_link,
-                  individualProduct.information1
+                  individualProduct.information1,
+                  IndividualProduct.img
                 );
               }}>
                 edit
               </Button>
               <Modal show={show} onHide={handleClose}>
-                <EditForm closeEvent={handleClose} fid={formid} name="roni achajee" />
+                <EditForm closeEvent={handleClose} fid={formid} name="amit" />
               </Modal>  
             </div>                    
         </div> 
