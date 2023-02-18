@@ -1,18 +1,18 @@
 import React from 'react'
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-const EditForm = (closeEvent) => {
+const EditForm = ({closeEvent, fid}) => {
   const [title, setTitle]=useState('');
   const [description, setDescription]=useState('');
   const [sheet_link, setSheet_link]=useState('');
   const [map_link, setMap_link] = useState('');
   const [category, setCategory]=useState('');
   const [image, setImage]=useState(null);
-  const [web_link, setWeb_link]=useState(null);      //link ke declear kora hoilo
-  const [information1, setInformation1]=useState(null);
-  const [information2, setInformation2]=useState(null);
+  const [web_link, setWeb_link]=useState('');      //link ke declear kora hoilo
+  const [information1, setInformation1]=useState('');
+  const [information2, setInformation2]=useState('');
   const [imageError, setImageError]=useState('');
   const handleProductImg=(e)=>{
         let selectedFile = e.target.files[0];
@@ -30,7 +30,18 @@ const EditForm = (closeEvent) => {
         else{
             console.log('please select your file');
         }
-    }
+    } 
+    console.log(typeof(fid.web_link));
+    console.log(fid.web_link);
+        useEffect(()=>{
+            setTitle(fid.title);
+            setDescription(fid.description);
+            setCategory(fid.category);
+            setWeb_link(web_link);
+            setSheet_link(sheet_link);
+            setMap_link(map_link);
+            setInformation1(information1);
+        },[]);
   return (
     <div>
       <Modal.Header closeButton>

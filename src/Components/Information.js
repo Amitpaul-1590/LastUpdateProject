@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { IndividualProduct } from './IndividualProduct';
+import { IndividualProduct } from './Admin/IndividualPlace';
 
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -26,7 +26,7 @@ const Information = () => {
   const getData = async () => {
     try {
       const res = await fetch(
-        //location.state.sheet_link
+        location.state.sheet_link
         // "https://sheet.best/api/sheets/4a4681c3-0c66-42c7-9049-1b8eb33c5ee2"
       );  
       const data = await res.json();

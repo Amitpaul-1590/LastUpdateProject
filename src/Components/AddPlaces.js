@@ -3,10 +3,10 @@ import {storage,fs} from '../Config/Config'
 
 import React,{useState, useEffect} from 'react'
 import { Navbar } from './Navbar'
-import { Products } from './Places'
-import { IndividualFilteredProduct } from './IndividualFilteredPlaces'
+import { Products } from './Admin/Places'
+import { IndividualFilteredProduct } from './Admin/IndividualFilteredPlaces'
 import {db} from '../Config/Config';
-import './addproduct.css';
+import './addplace.css';
 // import { collection } from "@firebase/firestore";
 //  import { useCollectionData } from "react-firebase-hooks/firestore";
 //  import {useCollectionData} from 'react-firebase-hooks/firestore';
@@ -22,9 +22,9 @@ export const AddPlaces = () => {
     const [map_link, setMap_link] = useState('');
     const [category, setCategory]=useState('');
     const [image, setImage]=useState(null);
-    const [web_link, setWeb_link]=useState(null);      //link ke declear kora hoilo
-    const [information1, setInformation1]=useState(null);
-    const [information2, setInformation2]=useState(null);
+    const [web_link, setWeb_link]=useState('');      //link ke declear kora hoilo
+    const [information1, setInformation1]=useState('');
+    const [information2, setInformation2]=useState('');
     const [imageError, setImageError]=useState('');
     
     const [successMsg, setSuccessMsg]=useState('');
@@ -272,8 +272,9 @@ export const AddPlaces = () => {
                       <a  onClick={returntoAllProducts}>Return to All Place</a>
                       <div className='products-box'>
                           {filteredProducts.map(individualFilteredProduct=>(
-                              <IndividualFilteredProduct key={individualFilteredProduct.ID}
-                              individualFilteredProduct={individualFilteredProduct}                   
+                              <IndividualFilteredProduct 
+                                key={individualFilteredProduct.ID}
+                                individualFilteredProduct={individualFilteredProduct}                   
                             />
                           ))}
                       </div>

@@ -1,7 +1,7 @@
-import {IndividualProduct} from './IndividualPlace'
 import React from 'react'
+import {IndividualProduct} from './IndividualPlace'
 
-export const Products = ({products}) => { 
+export const Products = ({products}) => {
     
     return products.map((individualProduct)=>(
         <IndividualProduct 
